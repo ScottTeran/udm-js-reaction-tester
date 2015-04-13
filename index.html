@@ -12,6 +12,7 @@
 			height: 200px;
 			background-color: red;
 			display: none;
+			position: relative;
 		}
 
 	</style>
@@ -22,6 +23,7 @@
 	<div id="box"></div>
 
 	<script type="text/javascript">
+
 
 	// random color generator from stackoverflow
 
@@ -39,12 +41,33 @@
 	reactionTime;
 
 		function makeBox() {
-
 			var time = Math.random();
-
 			time = time * 5000;
-
 			setTimeout(function() {
+
+
+				// change shape & position
+
+				if (Math.random() > 0.5) {
+
+					document.getElementById("box").style.borderRadius = "100px";
+				}
+				else {
+					document.getElementById("box").style.borderRadius = "0";
+				}
+
+				var top = Math.random();
+
+				top = top * 200;
+
+				var left = Math.random();
+
+				left = left * 400;
+
+
+				document.getElementById("box").style.top = top + "px";
+
+				document.getElementById("box").style.left = left + "px";
 
 				document.getElementById("box").style.backgroundColor = getRandomColor();
 
